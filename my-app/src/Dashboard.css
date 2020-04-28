@@ -1,0 +1,55 @@
+ul{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-left: 68%;
+}
+li {
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 42px;
+    color: #1DB954;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    margin-right: 4%;
+}
+
+header {
+    background: #191414;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes songMove {
+    from {left:2%;}
+    to {left:45%;}
+}
+
+.header-text {
+    position: relative;
+    font-size: 4rem;
+    margin-top: 3%;
+    text-align: left;
+    margin-left: 2%;
+    animation-name: songMove;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+}
+
+
+.song {
+    margin: 0;
+    color: #1DB954;
+}
+
+.suggester {
+    margin: 0;
+    color: #FFFFFF;
+}
+

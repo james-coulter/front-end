@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import * as yup from 'yup'
 import axios from 'axios'
-import {Button, FormGroup, FormControl, ControlLable} from 'react-bootstrap';
-import './Login.css'
+import './SignUp.css'
 
 const formSchema = yup.object().shape({
-    name: yup
+    username: yup
     .string()
     .required("Username is required."),
     password: yup
@@ -18,15 +17,13 @@ const formSchema = yup.object().shape({
 
 const SignUp = (props) => {
     const [formState, setFormState] = useState({
-        name: "",
+        username: "",
         password: "",
-        // position: ""
     });
 
     const [errors, setErrors] = useState({
-        name: "",
+        username: "",
         password: "",
-        // position: ""
     });
 
     const [user, setUser] = useState([]);
@@ -53,9 +50,8 @@ const SignUp = (props) => {
                 console.log("success", user)
 
             setFormState({
-                name:"", 
+                username:"", 
                 password:"",
-                // position: ""
             });
         })
         .catch(err => console.log(err.response))
@@ -99,17 +95,17 @@ const SignUp = (props) => {
         <form className='team-form' onSubmit={handleSubmit}>
             <div className="inputs-container">
             <div className="head">
-            <h2>login</h2>
+            <h2>sign up</h2>
             </div>
             <div className='inputs'>
             <label>
-            <input placeholder="username" className="user-input" type="text" value={formState.name} onChange={onInputChange} name='name'/>
+            <input placeholder="username" className="user-input" type="text" value={formState.name} onChange={onInputChange} name='username'/>
             </label>
             <label>
             <input placeholder="password" className="pass-input" type="password" value={formState.password} onChange={onInputChange} name='password'/>
             </label>
             <div className='errors'>
-            {errors.name.length > 0 ? (<p className='errors'>{errors.name}</p>) : null}
+            {errors.username.length > 0 ? (<p className='errors'>{errors.username}</p>) : null}
             </div>
             <div className='errors'>
             {errors.password.length > 0 ? (<p className='errors'>{errors.password}</p>) : null}
@@ -119,6 +115,9 @@ const SignUp = (props) => {
             </div>
         </form>
         </div>
+        {/* <div className='returnedArray'>
+        <pre id='text'>{JSON.stringify(user, null, 2)}</pre>
+        </div> */}
         </div>
     )
 }

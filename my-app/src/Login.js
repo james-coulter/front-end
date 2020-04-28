@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import * as yup from 'yup'
 import axios from 'axios'
-import {Button, FormGroup, FormControl, ControlLable} from 'react-bootstrap';
 import './Login.css'
 
 const formSchema = yup.object().shape({
@@ -18,12 +17,12 @@ const formSchema = yup.object().shape({
 
 const Login = (props) => {
     const [formState, setFormState] = useState({
-        name: "",
+        username: "",
         password: "",
     });
 
     const [errors, setErrors] = useState({
-        name: "",
+        username: "",
         password: "",
     });
 
@@ -51,7 +50,7 @@ const Login = (props) => {
                 console.log("success", user)
 
             setFormState({
-                name:"", 
+                username:"", 
                 password:"",
             });
         })
@@ -100,13 +99,13 @@ const Login = (props) => {
             </div>
             <div className='inputs'>
             <label>
-            <input placeholder="username" className="user-input" type="text" value={formState.name} onChange={onInputChange} name='name'/>
+            <input placeholder="username" className="user-input" type="text" value={formState.name} onChange={onInputChange} name='username'/>
             </label>
             <label>
             <input placeholder="password" className="pass-input" type="password" value={formState.password} onChange={onInputChange} name='password'/>
             </label>
             <div className='errors'>
-            {errors.name.length > 0 ? (<p className='errors'>{errors.name}</p>) : null}
+            {errors.username.length > 0 ? (<p className='errors'>{errors.username}</p>) : null}
             </div>
             <div className='errors'>
             {errors.password.length > 0 ? (<p className='errors'>{errors.password}</p>) : null}
