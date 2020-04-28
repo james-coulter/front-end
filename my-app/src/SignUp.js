@@ -26,7 +26,7 @@ const SignUp = (props) => {
         password: "",
     });
 
-    const [user, setUser] = useState([]);
+    const [login, setLogin] = useState([]);
 
     const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -44,10 +44,10 @@ const SignUp = (props) => {
     const handleSubmit = event => {
         event.preventDefault();
         axios
-            .post("https://reqres.in/api/users", formState)
+            .post("https://spotify-song-suggester1.herokuapp.com/api/auth/register", formState)
             .then(res => {
-                setUser([...user, res.data]);
-                console.log("success", user)
+                setLogin([...login, res.data]);
+                console.log("success", login)
 
             setFormState({
                 username:"", 

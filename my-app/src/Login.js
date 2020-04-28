@@ -4,7 +4,7 @@ import axios from 'axios'
 import './Login.css'
 
 const formSchema = yup.object().shape({
-    name: yup
+    username: yup
     .string()
     .required("Username is required."),
     password: yup
@@ -26,7 +26,7 @@ const Login = (props) => {
         password: "",
     });
 
-    const [user, setUser] = useState([]);
+    const [login, setLogin] = useState([]);
 
     const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -44,10 +44,12 @@ const Login = (props) => {
     const handleSubmit = event => {
         event.preventDefault();
         axios
-            .post("https://reqres.in/api/users", formState)
+            .post("https://spotify-song-suggester1.herokuapp.com/api/auth/login", formState)
             .then(res => {
-                setUser([...user, res.data]);
-                console.log("success", user)
+                setLogin([...login, res.data]);
+                console.log("success", login);
+                console.log(res);
+                console.log(res.data);
 
             setFormState({
                 username:"", 
@@ -78,9 +80,7 @@ const Login = (props) => {
         event.persist();
         const newFormData= {
             ...formState,
-            [event.target.name]:
-                event.target.type === "checkbox" ? event.target.checked
-                    : event.target.value
+            [event.target.name] : event.target.value
         }
         validateChange(event);
         setFormState(newFormData)
@@ -99,7 +99,7 @@ const Login = (props) => {
             </div>
             <div className='inputs'>
             <label>
-            <input placeholder="username" className="user-input" type="text" value={formState.name} onChange={onInputChange} name='username'/>
+            <input placeholder="username" className="user-input" type="text" value={formState.username} onChange={onInputChange} name='username'/>
             </label>
             <label>
             <input placeholder="password" className="pass-input" type="password" value={formState.password} onChange={onInputChange} name='password'/>
@@ -115,6 +115,9 @@ const Login = (props) => {
             </div>
         </form>
         </div>
+        {/* <div className='returnedArray'>
+        <pre id='text'>{JSON.stringify(login, null, 2)}</pre>
+        </div> */}
         </div>
     )
 }
