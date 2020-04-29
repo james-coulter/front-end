@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import * as yup from 'yup'
-import axios from 'axios'
-import './Login.css'
+import * as yup from 'yup';
+import axios from 'axios';
+import './Login.css';
 
 const formSchema = yup.object().shape({
     username: yup

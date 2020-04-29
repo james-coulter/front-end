@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route, Link,} from 'react-router-dom';
 import Login from './Login.js';
 import './Dashboard.css';
 import SearchBar from './SearchBar.js';
+import Sidebar from './Sidebar.js';
 
 
 
@@ -15,6 +16,7 @@ const Dashboard = (props) => {
 
     return(
         <div>
+        <Sidebar />
         <div className='dashboard'>
             <header>
             <nav>
