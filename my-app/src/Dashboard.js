@@ -5,6 +5,7 @@ import Login from './Login.js';
 import './Dashboard.css';
 import SearchBar from './SearchBar.js';
 import Sidebar from './Sidebar.js';
+import Carousel from './Carousel/Carousel.js';
 
 
 
@@ -34,6 +35,9 @@ const Dashboard = (props) => {
             </div>
             </header>
             <SearchBar />
+            <div className='carouselDiv'>
+            <Carousel />
+            </div>
         </div>
         </div>
 
