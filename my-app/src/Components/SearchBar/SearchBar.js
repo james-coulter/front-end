@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from 'react-search';
-import './Dashboard.css';
+import '../DashBoard/Dashboard.css';
 
 
 const HiItems = (items) => {

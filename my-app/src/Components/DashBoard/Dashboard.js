@@ -5,7 +5,7 @@ import Login from '../Login/Login.js';
 import './Dashboard.css';
 import SearchBar from '../SearchBar/SearchBar.js';
 import Sidebar from '../Sidebar/Sidebar.js';
-import Carousel from '../../Carousel/Carousel.js';
+import Carousel from '../Carousel/Carousel.js';
 
 
 
