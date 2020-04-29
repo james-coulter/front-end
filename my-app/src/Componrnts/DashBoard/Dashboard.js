@@ -1,11 +1,11 @@
 import React, {Component, PropTypes} from 'react';
 import Search from 'react-search'
 import {BrowserRouter as Router, Switch, Route, Link,} from 'react-router-dom';
-import Login from './Login.js';
+import Login from '../Login/Login.js';
 import './Dashboard.css';
-import SearchBar from './SearchBar.js';
-import Sidebar from './Sidebar.js';
-import Carousel from './Carousel/Carousel.js';
+import SearchBar from '../SearchBar/SearchBar.js';
+import Sidebar from '../Sidebar/Sidebar.js';
+import Carousel from '../../Carousel/Carousel.js';
 
 
 
