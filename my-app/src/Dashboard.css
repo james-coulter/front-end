@@ -16,8 +16,22 @@ ul{
     flex-direction: row;
     text-decoration: none;
     list-style: none;
-    margin-left: 50%;
+    margin-left: 3%;
     transition-duration: 0.5s;
+}
+
+.link-divider {
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 42px;
+    color: #1DB954;
+    display: flex;
+    margin-left: 5%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
 }
 
 .link:hover {
@@ -69,6 +83,18 @@ header {
     animation-iteration-count: 1;
 }
 
+.leftLarge {
+    display: flex;
+    font-size: 3rem;
+    animation: 4s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-delay: 4s;
+    position: absolute;
+    padding-left: 8%;
+    margin-top: 10%;
+    
+}
 
 .left-side {
     color: #1DB954;
@@ -129,7 +155,6 @@ header {
     animation-fill-mode: forwards;
     visibility: hidden;
     animation-delay: 4s;
-    margin-bottom: 0;
 
 }
 
