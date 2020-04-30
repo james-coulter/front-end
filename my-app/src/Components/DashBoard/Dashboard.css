@@ -1,0 +1,187 @@
+ul{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-left: 68%;
+}
+
+.link {
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 42px;
+    color: #1DB954;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+    margin-left: 3%;
+    transition-duration: 0.5s;
+}
+
+.link-divider {
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 42px;
+    color: #1DB954;
+    display: flex;
+    margin-left: 5%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    text-decoration: none;
+    list-style: none;
+}
+
+.link:hover {
+    color: #191414;
+}
+
+header {
+    background: #FFFFFF;
+    width: 100%;
+    height: 100%;
+}
+
+.header-text {
+    margin-top: 4%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+
+.song {
+    position: relative;
+    font-size: 7rem;
+    margin-top: 3%;
+    text-align: left;
+    padding-left: 5%;
+    margin: 0;
+    color: #1DB954;
+    animation-name: songMove;
+    animation-fill-mode: forwards;
+    animation-duration: 2.3s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+}
+
+.suggester {
+    position: relative;
+    font-size: 7rem;
+    margin-top: 3%;
+    text-align: left;
+    padding-left: 5%;
+    margin: 0;
+    color: #191414;
+    animation-name: suggesterMove;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+}
+
+.leftLarge {
+    display: flex;
+    font-size: 3rem;
+    animation: 4s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-delay: 4s;
+    position: absolute;
+    padding-left: 8%;
+    margin-top: 10%;
+    
+}
+
+.left-side {
+    color: #1DB954;
+    font-size: 3rem;
+    animation: 3s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-delay: 3s;
+    position: absolute;
+    padding-left: 8%;
+    margin-top: 5%;
+}
+
+.left-side-btm {
+    color: #191414;
+    font-size: 3rem;
+    animation: 4s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-delay: 4s;
+    position: absolute;
+    padding-left: 8%;
+    margin-top: 10%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes songMove {
+    from {left:2%;}
+    to {left:64%;}
+}
+
+@keyframes suggesterMove {
+    from {left:2%;}
+    to {left:45%;}
+}
+
+
+.searchBar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-top: 2%;
+    color: #1DB954;
+    font-size: 3rem;
+    animation: 4s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-delay: 4s;
+
+}
+
+
+.fullBar {
+    display: flex;
+    justify-content: center;
+    border: 4px solid #1DB954;
+    border-radius: 5px;
+    width: 50%;
+    box-shadow: 5px 10px 8px #888888;
+    padding: 1%;
+}
+
+.carouselDiv {
+    margin-top: 2%;
+    margin-bottom: 10%;
+    margin-left: 25%;
+    width: 50%;
+    border: 2px solid #1DB954;
+    animation: 4s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+    animation-delay: 4s;
+}
+
+.carouselDiv h2 {
+    color: #191414;
+    font-size: 5rem;
+}
