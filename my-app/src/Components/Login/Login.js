@@ -4,6 +4,8 @@ import * as yup from 'yup';
 import axios from 'axios';
 import './Login.css';
 
+
+
 const formSchema = yup.object().shape({
     username: yup
     .string()
@@ -17,6 +19,9 @@ const formSchema = yup.object().shape({
 
 
 const Login = (props) => {
+
+    
+
     const [formState, setFormState] = useState({
         username: "",
         password: "",
@@ -43,14 +48,17 @@ const Login = (props) => {
 
 
     const handleSubmit = event => {
+        console.log(event);
         event.preventDefault();
         axios
             .post("https://spotify-song-suggester1.herokuapp.com/api/auth/login", formState)
             .then(res => {
-                setLogin([...login, res.data]);
+                setLogin([...login, res.token]);
+                props.history.push("/userpage");
                 console.log("success", login);
                 console.log(res);
-                console.log(res.data);
+                console.log(res.token);
+                
 
             setFormState({
                 username:"", 

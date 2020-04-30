@@ -48,9 +48,9 @@ const SignUp = (props) => {
             .then(res => {
                 localStorage.setLogin([...login, res.token]);
                 localStorage.setItem("ID", res.id);
-
+                props.history.push("/userpage");
                 
-                console.log("success", login)
+                console.log("success", login);
 
             setFormState({
                 username:"", 
