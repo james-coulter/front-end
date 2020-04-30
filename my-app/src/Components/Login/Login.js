@@ -1,6 +1,7 @@
+
 import React, {useState, useEffect} from 'react';
 import * as yup from 'yup';
-import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import axios from 'axios';
 import './Login.css';
 
 const formSchema = yup.object().shape({
@@ -20,7 +21,6 @@ const Login = (props) => {
         username: "",
         password: "",
     });
-    
 
     const [errors, setErrors] = useState({
         username: "",
@@ -44,12 +44,10 @@ const Login = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        axiosWithAuth()
+        axios
             .post("https://spotify-song-suggester1.herokuapp.com/api/auth/login", formState)
             .then(res => {
-                localStorage.setItem('token', res.data.token);
                 setLogin([...login, res.data]);
-                this.props.history.push('/UserPage');
                 console.log("success", login);
                 console.log(res);
                 console.log(res.data);
@@ -61,8 +59,6 @@ const Login = (props) => {
         })
         .catch(err => console.log(err.response))
     }
-
-    //const handleChange
 
     const validateChange = event => {
         yup
@@ -81,10 +77,6 @@ const Login = (props) => {
                 });
             });
     };
-
-    //const handle change
-
-
     const onInputChange = event => {
         event.persist();
         const newFormData= {
@@ -96,10 +88,9 @@ const Login = (props) => {
 
       };
     //   console.log(errors)
-      //event once input chage goes through 
+
 
     return (
-        <div>
         <div className='login-page'>
         <div className='whole-container'>
         <form className='team-form' onSubmit={handleSubmit}>
@@ -128,7 +119,6 @@ const Login = (props) => {
         {/* <div className='returnedArray'>
         <pre id='text'>{JSON.stringify(login, null, 2)}</pre>
         </div> */}
-        </div>
         </div>
     )
 }

@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import * as yup from 'yup'
-import { axiosWithAuth } from '../../utils/axiosWithAuth';
-import './SignUp.css';
-import { useHistory } from 'react-router';
+import axios from 'axios'
+import './SignUp.css'
 
 const formSchema = yup.object().shape({
     username: yup
@@ -44,12 +43,13 @@ const SignUp = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        axiosWithAuth()
+        axios
             .post("https://spotify-song-suggester1.herokuapp.com/api/auth/register", formState)
             .then(res => {
-                localStorage.setItem('token', res.data.token);
-                setLogin([...login, res.data]);
-                this.prop.history.useHistory('/DashBoard');
+                localStorage.setLogin([...login, res.token]);
+                localStorage.setItem("ID", res.id);
+
+                
                 console.log("success", login)
 
             setFormState({
