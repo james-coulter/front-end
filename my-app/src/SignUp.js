@@ -55,7 +55,7 @@ const SignUp = (props) => {
                 password:"",
             })
             
-            props.history.push("/login");
+            props.history.push("/");
         })
         .catch(err => console.log(err.response))
     }
