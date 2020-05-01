@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import './Dashboard.css';
 import SearchBar from './SearchBar.js';
 import Sidebar from './Sidebar.js';
-import Carousel from './Carousel/Carousel.js';
+// import Carousel from './Carousel/Carousel.js';
 
 
 
@@ -28,8 +28,8 @@ const Dashboard = (props) => {
                 </ul>
             </nav>
             <div className='header-text'>
-            <h2 className='left-side'>Hey, there!</h2>
-            <h2 className='left-side-btm'>Let's get started.</h2>
+            <h2 className='left-side'>Welcome back!</h2>
+            <h2 className='left-side-btm'>Let's get searching.</h2>
             <h1 className='song'>Song</h1>
             <h1 className='suggester'>Suggester</h1>
             </div>

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import AudioPlayer from 'react-h5-audio-player';
 import * as yup from 'yup';
 import axios from 'axios';
 import './SearchBar.css';
@@ -63,14 +64,6 @@ const SearchBar = (props) => {
             console.log(err.response)})
     }
 
-    // const songList = login.map((login, i) => {
-    //     return (
-    //         <div>
-    //         <h2>{login.track_name}</h2>
-    //         <p>{login.artist_name}</p>
-    //         </div>
-    //     )
-    // })
 
     const validateChange = event => {
         yup
@@ -102,6 +95,7 @@ const SearchBar = (props) => {
     //   console.log(errors)
 
 
+
     return (
         <div className='largeContainer'>
         <form className='search-form' onSubmit={handleSubmit}>
@@ -109,7 +103,7 @@ const SearchBar = (props) => {
             <div className="heading">
             <h2>Start Here</h2>
             {isLoading && (
-            <div class="lds-ring">
+            <div className="lds-ring">
             <div></div>
             <div></div>
             <div></div>
@@ -117,11 +111,12 @@ const SearchBar = (props) => {
             </div>
             )}
             </div>
-            <div className='searchInputs'>
             <label>
+            <h2>Song Title:</h2>
             <input placeholder="Song" className="user-input" type="text" value={formState.name} onChange={onInputChange} name='name'/>
             </label>
             <label>
+            <h2>Artist:</h2>
             <input placeholder="Artist" className="pass-input" type="text" value={formState.artist} onChange={onInputChange} name='artist'/>
             </label>
             <div className='errors'>
@@ -132,16 +127,19 @@ const SearchBar = (props) => {
             </div>
             <button data-cy='submit' className='submit' disabled={buttonDisabled}>let's go</button>
             </div>
-            </div>
         </form>
+        <div className="trackPlayer">
             {login.map((song)=> {
                 return (
-                <div>
-                <h2>{song.name}</h2>
-                <h3>{song.artist}</h3>
+                <div className="displayedSongs">
+                <AudioPlayer src={song.preview_url} onPlay={e => console.log('Playing')} />
+                <h2 className='songName'>{song.name}</h2>
+                <h2 className="divider">|</h2>
+                <h3 className='artist'>{song.artist}</h3>
                 </div>
                 )
             })}
+        </div>
         </div>
     )
 }

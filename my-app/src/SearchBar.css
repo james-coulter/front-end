@@ -10,13 +10,76 @@
 .heading {
     font-size: 3rem;
     color: #1DB954;
-    margin: 0;
-    text-align: left;
-
+    text-align: center;
 }
 
-.searchInputs {
-    margin: 0;
+.heading h2 {
+    text-align: center;
+}
+
+.search-form {
+    margin-top: 1%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
+
+.inputsContainer label {
+    font-size: 1.5rem;
+    margin-right: 10%;
+}
+
+.inputsContainer input {
+    font-size: 1rem;
+    border-radius: 10px;
+    color: #1DB954;
+    font-weight: 500;
+    text-align: center;
+}
+
+.rhap_progress-section, .rhap_additional-controls, .rhap_rewind-button, .rhap_forward-button, .rhap_volume-controls{
+    display: none;
+}
+
+.rhap_button-clear {
+    background: #1DB954;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.rhap_button-clear svg{
+    width: 20px;
+    height: 20px;
+}
+
+.trackPlayer {
+    margin-bottom: 2%;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+
+.displayedSongs {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: #191414;
+    color: #ffffff;
+    margin: 2%;
+    border-radius: 10px;
+    padding: 1%;
+    width: 70%;
+}
+
+.songName {
+    margin-right: 3%;
+    margin-left: 3%;
+}
+
+.divider {
+    margin-right: 3%;
 }
 
 

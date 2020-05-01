@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import * as yup from 'yup'
 import axios from 'axios'
 import './SignUp.css'
@@ -93,6 +94,11 @@ const SignUp = (props) => {
 
     return (
         <div className='login-page'>
+            <nav>
+                <ul>
+                    <Link className='link-loginPage' to='/'>login</Link>
+                </ul>
+            </nav>
         <div className='whole-container'>
         <form className='team-form' onSubmit={handleSubmit}>
             <div className="inputs-container">
