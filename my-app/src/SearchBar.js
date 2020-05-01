@@ -122,9 +122,6 @@ const Login = (props) => {
             </div>
             </div>
         </form>
-        <div className='returnedArray'>
-        <pre id='text'>{JSON.stringify(login, null, 2)}</pre>
-        </div>
         </div>
     )
 }
