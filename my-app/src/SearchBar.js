@@ -102,14 +102,6 @@ const SearchBar = (props) => {
             <div className="inputsContainer">
             <div className="heading">
             <h2>Start Here</h2>
-            {isLoading && (
-            <div className="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            </div>
-            )}
             </div>
             <label>
             <h2>Song Title:</h2>
@@ -125,7 +117,18 @@ const SearchBar = (props) => {
             <div className='errors'>
             {errors.artist.length > 0 ? (<p className='errors'>{errors.artist}</p>) : null}
             </div>
-            <button data-cy='submit' className='submit' disabled={buttonDisabled}>let's go</button>
+            <button data-cy='submit' className='submit' disabled={buttonDisabled}>let's create</button>
+            {isLoading && (
+            <div>
+            <h4>Please wait while our engineers are hard at work crafting the best recommendations in town.</h4>
+            <div className="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            </div>
+            </div>
+            )}
             </div>
         </form>
         <div className="trackPlayer">
