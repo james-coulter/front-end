@@ -45,7 +45,7 @@ const SearchBar = (props) => {
         event.preventDefault();
         setIsLoading(true); // for spinner
         axios
-            .post("https://spottysuggester.herokuapp.com/recommendations/json", formState)
+            .post("https://cors-anywhere.herokuapp.com/https://spottysuggester.herokuapp.com/recommendations/json", formState)
             .then(res => {
                 setLogin(res.data);
                 console.log(res);
