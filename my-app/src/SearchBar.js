@@ -3,7 +3,6 @@ import * as yup from 'yup';
 import axios from 'axios';
 import './SearchBar.css';
 
-
 const formSchema = yup.object().shape({
     name: yup
     .string()
