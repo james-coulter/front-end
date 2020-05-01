@@ -39,6 +39,7 @@ const Dashboard = (props) => {
             <Carousel />
             </div> */}
         </div>
+        
         </div>
 
     )
