@@ -39,17 +39,17 @@ const Login = (props) => {
 
 
 
-
     const handleSubmit = event => {
         event.preventDefault();
         axios
             .post("https://spottysuggester.herokuapp.com/test/recommendations/json", formState)
             .then(res => {
-                setLogin([...login, res.data]);
-                console.log("success", login);
+
                 console.log(res);
                 console.log(res.data);
                 Object.keys(res.data).map((login) => {setLogin.push(login)})
+                setLogin(login);
+
 
             setFormState({
                 name:"", 
@@ -58,6 +58,15 @@ const Login = (props) => {
         })
         .catch(err => console.log(err.response))
     }
+
+    const songList = login.map((login, i) => {
+        return (
+            <div>
+            <h2>{login.track_name}</h2>
+            <p>{login.artist_name}</p>
+            </div>
+        )
+    })
 
     const validateChange = event => {
         yup
@@ -113,10 +122,9 @@ const Login = (props) => {
             </div>
             </div>
         </form>
-
-        {/* <div className='returnedArray'>
+        <div className='returnedArray'>
         <pre id='text'>{JSON.stringify(login, null, 2)}</pre>
-        </div> */}
+        </div>
         </div>
     )
 }
