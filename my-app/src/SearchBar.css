@@ -1,0 +1,22 @@
+
+.inputsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 40%;
+    margin-left: 10%;
+}
+
+.heading {
+    font-size: 3rem;
+    color: #1DB954;
+    margin: 0;
+    text-align: left;
+
+}
+
+.searchInputs {
+    margin: 0;
+}
+
+

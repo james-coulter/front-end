@@ -54,7 +54,8 @@ const Login = (props) => {
             setFormState({
                 username:"", 
                 password:"",
-            });
+            })
+            props.history.push("/dashboard");
         })
         .catch(err => console.log(err.response))
     }

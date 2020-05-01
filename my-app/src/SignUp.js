@@ -52,7 +52,9 @@ const SignUp = (props) => {
             setFormState({
                 username:"", 
                 password:"",
-            });
+            })
+            
+            props.history.push("/login");
         })
         .catch(err => console.log(err.response))
     }

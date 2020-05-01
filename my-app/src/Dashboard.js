@@ -35,9 +35,9 @@ const Dashboard = (props) => {
             </div>
             </header>
             <SearchBar />
-            <div className='carouselDiv'>
+            {/* <div className='carouselDiv'>
             <Carousel />
-            </div>
+            </div> */}
         </div>
         </div>
 
