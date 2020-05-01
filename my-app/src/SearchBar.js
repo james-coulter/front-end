@@ -14,7 +14,7 @@ const formSchema = yup.object().shape({
 
 
 
-const Login = (props) => {
+const SearchBar = (props) => {
     const [formState, setFormState] = useState({
         name: "",
         artist: "",
@@ -29,6 +29,8 @@ const Login = (props) => {
 
     const [buttonDisabled, setButtonDisabled] = useState(true);
 
+    const [isLoading, setIsLoading] = useState(false); // for spinner
+
 
     useEffect(() => {
         formSchema.isValid(formState)
@@ -41,32 +43,34 @@ const Login = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
+        setIsLoading(true); // for spinner
         axios
-            .post("https://spottysuggester.herokuapp.com/test/recommendations/json", formState)
+            .post("https://spottysuggester.herokuapp.com/recommendations/json", formState)
             .then(res => {
-
+                setLogin(res.data);
                 console.log(res);
                 console.log(res.data);
-                Object.keys(res.data).map((login) => {setLogin.push(login)})
-                setLogin(login);
-
+                setIsLoading(false); // for spinner
+                
 
             setFormState({
                 name:"", 
                 artist:"",
             });
         })
-        .catch(err => console.log(err.response))
+        .catch(err => {
+            setIsLoading(false); // for spinner
+            console.log(err.response)})
     }
 
-    const songList = login.map((login, i) => {
-        return (
-            <div>
-            <h2>{login.track_name}</h2>
-            <p>{login.artist_name}</p>
-            </div>
-        )
-    })
+    // const songList = login.map((login, i) => {
+    //     return (
+    //         <div>
+    //         <h2>{login.track_name}</h2>
+    //         <p>{login.artist_name}</p>
+    //         </div>
+    //     )
+    // })
 
     const validateChange = event => {
         yup
@@ -104,6 +108,14 @@ const Login = (props) => {
             <div className="inputsContainer">
             <div className="heading">
             <h2>Start Here</h2>
+            {isLoading && (
+            <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            </div>
+            )}
             </div>
             <div className='searchInputs'>
             <label>
@@ -122,10 +134,17 @@ const Login = (props) => {
             </div>
             </div>
         </form>
+            {login.map((song)=> {
+                return (
+                <div>
+                <h2>{song.name}</h2>
+                <h3>{song.artist}</h3>
+                </div>
+                )
+            })}
         </div>
     )
 }
 
-export default Login
-
+export default SearchBar
 

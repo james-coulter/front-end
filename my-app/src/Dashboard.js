@@ -22,7 +22,7 @@ const Dashboard = (props) => {
             <header>
             <nav>
                 <ul>
-                    <Link className='link' to='/login'>log out</Link>
+                    <Link className='link' to='/'>log out</Link>
                     <div className='link-divider'>|</div>
                     <Link className='link' to='/signup'>new account</Link>
                 </ul>
